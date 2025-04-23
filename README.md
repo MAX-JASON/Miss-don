@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title> 國泰人壽醫療險規劃方案 - 專業守護您的健康 </title>
     <!-- CDN 引入 Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -460,8 +460,14 @@
         }
         
         @media (max-width: 768px) {
+            html {
+                -webkit-text-size-adjust: 100%;
+            }
+            
             body {
-                padding: 10px;
+                padding: 8px;
+                overflow-x: hidden;
+                width: 100vw;
             }
             
             .row {
@@ -470,30 +476,69 @@
             
             .col {
                 width: 100%;
-                padding: 10px 0;
+                padding: 8px 0;
+                box-sizing: border-box;
             }
             
             .section {
-                padding: 15px;
-                margin: 10px 0;
+                padding: 12px;
+                margin: 8px 0;
+                width: 100%;
+                box-sizing: border-box;
             }
             
             .chart-container {
-                padding: 10px;
-                min-height: 250px;
+                padding: 8px;
+                min-height: 200px;
+                max-height: 60vh;
+                width: 100%;
             }
             
             h1 {
-                font-size: 1.8em;
+                font-size: 1.6em;
+                word-break: break-word;
             }
             
             .header-container {
-                padding: 20px 10px;
-                margin-bottom: 20px;
+                padding: 15px 8px;
+                margin-bottom: 15px;
             }
             
             .cta-section {
-                padding: 20px 10px;
+                padding: 15px 8px;
+            }
+            
+            table {
+                width: 100%;
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+        }
+
+        /* 竖屏特定样式 */
+        @media (max-width: 768px) and (orientation: portrait) {
+            .chart-container {
+                height: 50vh;
+                min-height: 180px;
+            }
+            
+            .section {
+                margin: 5px 0;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+        
+        /* 横屏特定样式 */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .chart-container {
+                height: 60vh;
             }
         }
         
